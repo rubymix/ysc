@@ -1,12 +1,12 @@
-import React from 'react'
+import React from 'react';
 
 // Import typefaces
-import 'typeface-montserrat'
-import 'typeface-merriweather'
+import 'typeface-montserrat';
+import 'typeface-merriweather';
 
-import profilePic from './../assets/images/avatar.png'
-import { rhythm } from '../utils/typography'
-import bioData from './../data/bio'
+import profilePic from './../assets/images/avatar.png';
+import { rhythm } from '../utils/typography';
+import bioData from './../data/bio';
 
 class Bio extends React.Component {
   render() {
@@ -29,8 +29,8 @@ class Bio extends React.Component {
         />
         <p>{bioData}</p>
       </div>
-    )
+    );
   }
 }
 
-export default Bio
+export default Bio;

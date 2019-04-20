@@ -1,8 +1,7 @@
-import React, { Component } from 'react'
-import { Link } from 'gatsby'
+import React, { Component } from 'react';
+import { Link } from 'gatsby';
 
-import { rhythm } from './../utils/typography'
-import contactData from './../data/contact'
+import { rhythm } from './../utils/typography';
 
 export class Navbar extends Component {
   render() {
@@ -25,17 +24,14 @@ export class Navbar extends Component {
           }}
         >
           <Link to={'/'}>Home</Link>
-          <Link to={'/portfolio'}>Portfolio</Link>
-          <Link to={'/journey'}>Journey</Link>
-          <a href={contactData.github} target="_new">
-            Github
-          </a>
-          <Link to={'/contact'}>Contact</Link>
-          <Link to={'/blog'}>Blog</Link>
+          {/* <Link to={'/portfolio'}>Portfolio</Link> */}
+          <Link to={'/timeline'}>Timeline</Link>
+          {/* <Link to={'/contact'}>Contact us</Link> */}
+          {/* <Link to={'/blog'}>Blog</Link> */}
         </div>
       </div>
-    )
+    );
   }
 }
 
-export default Navbar
+export default Navbar;

@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 const styles = {
   rootContainer: {
@@ -11,7 +11,7 @@ const styles = {
     color: 'gray',
     paddingTop: 15,
   },
-}
+};
 
 export class Footer extends Component {
   render() {
@@ -22,8 +22,8 @@ export class Footer extends Component {
           GatsbyJS
         </a>
       </div>
-    )
+    );
   }
 }
 
-export default Footer
+export default Footer;

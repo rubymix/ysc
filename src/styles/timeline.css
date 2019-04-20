@@ -45,3 +45,18 @@
 .vertical-timeline-element-title {
   color: #4078c0;
 }
+
+/* TODO */
+.vertical-timeline-element-place {
+  font-size: small;
+}
+
+/* TODO */
+.vertical-timeline-element-attendance {
+  font-size: small;
+}
+
+/* TODO */
+.vertical-timeline-element-description {
+  font-size: small;
+}

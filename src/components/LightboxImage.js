@@ -2,16 +2,17 @@ import React, { Component } from 'react'
 import Modal from 'react-responsive-modal'
 
 export class LightboxImage extends Component {
-  state = {
-    open: false,
-  }
+  // constructor() {
+  //   this.state = { open: false };
+  // }
+  state = { open: false };
 
   openModal = () => {
-    this.setState({ open: true })
+    this.setState({ open: true });
   }
 
   closeModal = () => {
-    this.setState({ open: false })
+    this.setState({ open: false });
   }
 
   render() {
