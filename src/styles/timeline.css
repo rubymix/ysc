@@ -48,12 +48,52 @@
 
 /* TODO */
 .vertical-timeline-element-place {
-  font-size: small;
+  /* a */
+  text-decoration: none;
+
+  /* label */
+  display: inline-block;
+  line-height: 1;
+  vertical-align: baseline;
+  margin: 0 .14285714em;
+  padding: .5833em .833em;
+  font-weight: 700;
+  border: 0 solid transparent;
+  /* border-radius: .28571429rem; */
+
+  /* small */
+  font-size: .78571429rem;
+  /* tiny */
+  font-size: .71428571rem;
+
+  background-color: #a333c8;
+  border-color: #a333c8;
+  color: white;
 }
 
 /* TODO */
 .vertical-timeline-element-attendance {
+  /* a */
+  text-decoration: none;
+
+  /* label */
+  display: inline-block;
+  line-height: 1;
+  vertical-align: baseline;
+  margin: 0 .14285714em;
+  padding: .5833em .833em;
+  font-weight: 700;
+  border: 0 solid transparent;
+  border-radius: .28571429rem;
+
+  /* small */
   font-size: small;
+  /* tiny */
+  font-size: .71428571rem;
+
+  background-color: #2185d0;
+  border-color: #2185d0;
+  color: white;
 }
 
 /* TODO */
