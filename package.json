@@ -40,11 +40,7 @@
     "typography-theme-github": "^0.15.10",
     "typography-theme-wordpress-2016": "^0.15.10"
   },
-  "devDependencies": {
-    "gh-pages": "^1.2.0",
-    "prettier": "^1.17.0"
-  },
-  "homepage": "",
+  "homepage": "https://ysc.sulhee.com",
   "keywords": [],
   "license": "MIT",
   "main": "n/a",
@@ -53,14 +49,10 @@
     "url": "git+https://github.com/rubymix/gatsby-ysc.git"
   },
   "scripts": {
-    "dev": "gatsby develop",
-    "lint": "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js' 'src/**/*.md'",
-    "develop": "gatsby develop",
-    "start": "npm run develop",
-    "build": "gatsby build",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
-    "fix-semi": "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix gatsby-node.js"
+    "start": "gatsby develop",
+    "build": "gatsby build"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.1"
   }
 }

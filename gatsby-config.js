@@ -4,14 +4,21 @@ module.exports = {
     title: 'Yusung Castle',
     description: 'Higher society',
     author: 'Junghyun Kim',
-    siteUrl: 'http://ysc.sulhee.com',
+    siteUrl: 'https://ysc.sulhee.com',
   },
   pathPrefix: '/',
   plugins: [{
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: __dirname + '/src/pages',
         name: 'blog',
+        path: __dirname + '/src/pages',
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'images',
+        path: __dirname + '/src/assets/images',
       },
     },
     {

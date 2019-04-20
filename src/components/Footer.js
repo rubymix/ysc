@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 const styles = {
   rootContainer: {
@@ -13,7 +13,7 @@ const styles = {
   },
 };
 
-export class Footer extends Component {
+export default class Footer extends React.PureComponent {
   render() {
     return (
       <div style={styles.rootContainer}>
@@ -25,5 +25,3 @@ export class Footer extends Component {
     );
   }
 }
-
-export default Footer;

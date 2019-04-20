@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'gatsby';
 
 import { rhythm } from './../utils/typography';
 
-export class Navbar extends Component {
+export default class Navbar extends React.PureComponent {
   render() {
     return (
       <div
@@ -33,5 +33,3 @@ export class Navbar extends Component {
     );
   }
 }
-
-export default Navbar;

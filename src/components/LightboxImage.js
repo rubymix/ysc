@@ -1,22 +1,25 @@
-import React, { Component } from 'react'
-import Modal from 'react-responsive-modal'
+import React from 'react';
+import Modal from 'react-responsive-modal';
 
-export class LightboxImage extends Component {
-  // constructor() {
-  //   this.state = { open: false };
-  // }
-  state = { open: false };
+export default class LightboxImage extends React.PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = { open: false };
 
-  openModal = () => {
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
+  }
+
+  openModal() {
     this.setState({ open: true });
   }
 
-  closeModal = () => {
+  closeModal() {
     this.setState({ open: false });
   }
 
   render() {
-    const { title, caption, src } = this.props
+    const { title, caption, src } = this.props;
     return (
       <div>
         <Modal
@@ -38,15 +41,11 @@ export class LightboxImage extends Component {
           </div>
         </Modal>
         <img
-          src={src}
+          src={src + '?nf_resize=fit&w=300'}
           alt={title}
-          onClick={() => {
-            this.openModal()
-          }}
+          onClick={this.openModal}
         />
       </div>
-    )
+    );
   }
 }
-
-export default LightboxImage

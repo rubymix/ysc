@@ -1,18 +1,18 @@
-import React, { Component } from 'react'
-import Helmet from 'react-helmet'
-import { Link } from 'gatsby'
+import React from 'react';
+import Helmet from 'react-helmet';
+import { Link } from 'gatsby';
 
-import Layout from './../../components/Layout'
+import Layout from './../../components/Layout';
 
-export class view extends Component {
+export default class view extends React.PureComponent {
   render() {
     const passedData = this.props.location.state || {
       title: 'default title',
       description: 'default description',
       image: 'https://via.placeholder.com/350',
       website: 'https://via.placeholder.com',
-    }
-    const { title, description, image, website } = passedData
+    };
+    const { title, description, image, website } = passedData;
     return (
       <Layout>
         <Helmet>
@@ -20,7 +20,7 @@ export class view extends Component {
         </Helmet>
         <Link to="/portfolio">&larr; back</Link>
         <h2>{title}</h2>
-        <img src={image} />
+        <img src={image} alt={title} />
         <div>
           {description}
           <br /> <br />
@@ -34,8 +34,6 @@ export class view extends Component {
           )}
         </div>
       </Layout>
-    )
+    );
   }
 }
-
-export default view

@@ -7,7 +7,7 @@ import { Grid, Row, Col } from 'react-flexbox-grid'
 import Layout from '../../components/Layout'
 import portfolioData from './../../data/portfolio'
 
-class portfolioIndex extends React.Component {
+export default class portfolioIndex extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const siteDescription = get(
@@ -64,9 +64,7 @@ class portfolioIndex extends React.Component {
   }
 }
 
-export default portfolioIndex
-
-export const query = graphql`
+export const query = graphql `
   query {
     site {
       siteMetadata {
@@ -75,4 +73,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;

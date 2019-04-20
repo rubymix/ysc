@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from '../components/Layout';
 
-class NotFoundPage extends React.Component {
+export default class NotFound extends React.PureComponent {
   render() {
     return (
       <Layout location={this.props.location}>
@@ -13,5 +13,3 @@ class NotFoundPage extends React.Component {
     )
   }
 }
-
-export default NotFoundPage
