@@ -14,7 +14,7 @@ import './../styles/timeline.css';
 import LightboxImage from '../components/LightboxImage';
 import jsonData from './../data/timeline';
 
-class Timeline extends React.Component {
+export default class Timeline extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title');
     const siteDescription = get(
@@ -67,8 +67,6 @@ class Timeline extends React.Component {
     );
   }
 }
-
-export default Timeline;
 
 export const query = graphql`
   query {

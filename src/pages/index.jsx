@@ -6,7 +6,7 @@ import Hemlet from 'react-helmet';
 import Layout from '../components/Layout';
 import DisplayImage from './../assets/images/JP410417_121158.jpg';
 
-class SiteIndex extends React.Component {
+export default class SiteIndex extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title');
     const siteDescription = get(
@@ -28,8 +28,6 @@ class SiteIndex extends React.Component {
     );
   }
 }
-
-export default SiteIndex;
 
 export const query = graphql`
   query {

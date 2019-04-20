@@ -41,7 +41,7 @@ export default class LightboxImage extends React.PureComponent {
           </div>
         </Modal>
         <img
-          src={src + '?nf_resize=fit&w=300'}
+          src={src}
           alt={title}
           onClick={this.openModal}
         />

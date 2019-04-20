@@ -1,19 +1,19 @@
-import React from 'react'
-import { Link, graphql } from 'gatsby'
-import get from 'lodash/get'
-import Helmet from 'react-helmet'
-import { Grid, Row, Col } from 'react-flexbox-grid'
+import React from 'react';
+import { Link, graphql } from 'gatsby';
+import get from 'lodash/get';
+import Helmet from 'react-helmet';
+import { Grid, Row, Col } from 'react-flexbox-grid';
 
-import Layout from '../../components/Layout'
-import portfolioData from './../../data/portfolio'
+import Layout from '../../components/Layout';
+import portfolioData from './../../data/portfolio';
 
 export default class portfolioIndex extends React.Component {
   render() {
-    const siteTitle = get(this, 'props.data.site.siteMetadata.title')
+    const siteTitle = get(this, 'props.data.site.siteMetadata.title');
     const siteDescription = get(
       this,
       'props.data.site.siteMetadata.description'
-    )
+    );
 
     return (
       <Layout>
@@ -60,7 +60,7 @@ export default class portfolioIndex extends React.Component {
           </Grid>
         </div>
       </Layout>
-    )
+    );
   }
 }
 
