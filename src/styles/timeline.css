@@ -99,4 +99,5 @@
 /* TODO */
 .vertical-timeline-element-description {
   font-size: small;
+  white-space: pre-wrap;
 }

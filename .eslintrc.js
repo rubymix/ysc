@@ -6,6 +6,10 @@ module.exports = {
   "plugins": [
     "react",
   ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+  ],
   "globals": {
     "graphql": false,
   },
