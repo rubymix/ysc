@@ -6,6 +6,7 @@ import Helmet from 'react-helmet';
 import Layout from '../../components/Layout';
 import { rhythm } from '../../utils/typography';
 
+
 export default class BlogIndex extends React.PureComponent {
   render() {
     const siteTitle = this.props.data.site.siteMetadata.title;

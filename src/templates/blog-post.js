@@ -9,6 +9,19 @@ import { rhythm, scale } from '../utils/typography';
 
 
 export default class BlogPostTemplate extends React.PureComponent {
+  componentDidMount() {
+    const utterances = document.createElement('script');
+    utterances.setAttribute('src', 'https://utteranc.es/client.js');
+    utterances.setAttribute('repo', 'rubymix/ysc-comments');
+    utterances.setAttribute('issue-term', 'pathname');
+    utterances.setAttribute('label', 'comment');
+    utterances.setAttribute('theme', 'github-light');
+    utterances.setAttribute('crossorigin', 'anonymous');
+    utterances.setAttribute('async', true);
+
+    document.getElementById('utterances').appendChild(utterances);
+  }
+
   render() {
     const siteTitle = this.props.data.site.siteMetadata.title;
     const post = this.props.data.markdownRemark;
@@ -42,6 +55,7 @@ export default class BlogPostTemplate extends React.PureComponent {
           }}
         />
         <Author author={post.frontmatter.author}/>
+        <div id="utterances" />
         <ul
           style={{
             display: 'flex',
