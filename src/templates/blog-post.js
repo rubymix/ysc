@@ -12,7 +12,7 @@ export default class BlogPostTemplate extends React.PureComponent {
   componentDidMount() {
     const utterances = document.createElement('script');
     utterances.setAttribute('src', 'https://utteranc.es/client.js');
-    utterances.setAttribute('repo', 'rubymix/ysc-comments');
+    utterances.setAttribute('repo', 'rubymix/ysc');
     utterances.setAttribute('issue-term', 'pathname');
     utterances.setAttribute('label', 'comment');
     utterances.setAttribute('theme', 'github-light');
