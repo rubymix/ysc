@@ -1,10 +1,10 @@
 {
-  "name": "gatsby-ysc",
+  "name": "ysc",
   "description": "Yusung Castle website by GatsbyJS",
   "version": "0.1.0",
   "author": "Junghyun Kim",
   "bugs": {
-    "url": "https://github.com/rubymix/gatsby-ysc/issues"
+    "url": "https://github.com/rubymix/ysc/issues"
   },
   "dependencies": {
     "gatsby": "^2.3.25",
@@ -47,7 +47,7 @@
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rubymix/gatsby-ysc.git"
+    "url": "git+https://github.com/rubymix/ysc.git"
   },
   "scripts": {
     "start": "gatsby develop",
