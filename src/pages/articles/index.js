@@ -17,9 +17,9 @@ export default class BlogIndex extends React.PureComponent {
         <Helmet
           htmlAttributes={{ lang: 'en' }}
           meta={[{ name: 'description', content: siteDescription }]}
-          title={`Blog | ${siteTitle}`}
+          title={`Articles | ${siteTitle}`}
         />
-        <h2>Blog</h2>
+        <h2>Articles</h2>
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.frontmatter.path;
           return (
@@ -65,7 +65,7 @@ export const query = graphql `
             slug
           }
           frontmatter {
-            date(formatString: "MMMM DD, YYYY")
+            date(formatString: "YYYY-MM-DD")
             title
             path
             type

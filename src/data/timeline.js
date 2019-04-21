@@ -2,7 +2,7 @@ import React from 'react';
 import { FaRegCalendarCheck, FaRegCalendarAlt } from 'react-icons/fa';
 
 const data = [
-  // 데이터
+  // placeholder
   {
     date: '2019-04-11',
     title: '22차 모임 (정기 모임)',

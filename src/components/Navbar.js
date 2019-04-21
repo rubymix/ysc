@@ -24,10 +24,9 @@ export default class Navbar extends React.PureComponent {
           }}
         >
           <Link to={'/'}>Home</Link>
-          {/* <Link to={'/portfolio'}>Portfolio</Link> */}
+          <Link to={'/leadership'}>Leadership</Link>
           <Link to={'/timeline'}>Timeline</Link>
-          {/* <Link to={'/contact'}>Contact us</Link> */}
-          {/* <Link to={'/blog'}>Blog</Link> */}
+          {/* <Link to={'/articles'}>Articles</Link> */}
         </div>
       </div>
     );

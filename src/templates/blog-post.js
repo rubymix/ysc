@@ -9,8 +9,8 @@ import { rhythm, scale } from '../utils/typography';
 
 export default class BlogPostTemplate extends React.PureComponent {
   render() {
-    const post = this.props.data.markdownRemark;
     const siteTitle = this.props.data.site.siteMetadata.title;
+    const post = this.props.data.markdownRemark;
     const siteDescription = post.excerpt;
     const { previous, next } = this.props.pageContext;
 
@@ -21,7 +21,7 @@ export default class BlogPostTemplate extends React.PureComponent {
           meta={[{ name: 'description', content: siteDescription }]}
           title={`${post.frontmatter.title} | ${siteTitle}`}
         />
-        <Link to="/blog">&larr; Blog</Link>
+        <Link to="/articles">&larr; Articles</Link>
         <h1>{post.frontmatter.title}</h1>
         <br />
         <p
@@ -70,17 +70,10 @@ export default class BlogPostTemplate extends React.PureComponent {
   }
 }
 BlogPostTemplate.propTypes = {
-  data: PropTypes.shape({
-    site: PropTypes.shape({
-      siteMetadata: PropTypes.shape({
-        title: PropTypes.string.isRequired,
-        author: PropTypes.string.isRequired,
-      }).isRequired,
-    }).isRequired,
-  }).isRequired,
+  data: PropTypes.object.isRequired
 };
 
-export const query = graphql`
+export const query = graphql `
   query BlogPostBySlug($slug: String!) {
     site {
       siteMetadata {
@@ -94,7 +87,7 @@ export const query = graphql`
       html
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "YYYY-MM-DD")
         path
       }
       fields {

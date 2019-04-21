@@ -2,10 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
+import { Grid, Row, Col } from 'react-flexbox-grid';
 
 import Layout from '../components/Layout';
+import jsonData from './../data/leadership';
 
-export default class Contact extends React.PureComponent {
+
+export default class Leadership extends React.PureComponent {
   render() {
     const siteTitle = this.props.data.site.siteMetadata.title;
     const siteDescription = this.props.data.site.siteMetadata.description;
@@ -15,24 +18,31 @@ export default class Contact extends React.PureComponent {
         <Helmet
           htmlAttributes={{ lang: 'en' }}
           meta={[{ name: 'description', content: siteDescription }]}
-          title={`Contact | ${siteTitle}`}
+          title={`Leadership | ${siteTitle}`}
         />
 
-        <h2>Contact</h2>
-        <br />
-        <p>Kakao: 김정진</p>
-        <p>Phone: 김찬수</p>
-        <p>Email: 김정현</p>
-        <p>Meet: 안진영</p>
+        <h2>Leadership</h2>
+        <Grid fluid>
+          <Row>
+            <h3>Board</h3>
+          </Row>
+          <Row>
+            {jsonData.map((item, index) =>
+              <Col key={index} xs>
+                <img src={item.portrait} alt={item.name} style={{width: 250, margin: 10}} />
+              </Col>
+            )}
+          </Row>
+        </Grid>
       </Layout>
     );
   }
 }
-Contact.propTypes = {
+Leadership.propTypes = {
   data: PropTypes.object.isRequired
 };
 
-export const query = graphql`
+export const query = graphql `
   query {
     site {
       siteMetadata {

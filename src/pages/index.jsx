@@ -5,6 +5,7 @@ import Hemlet from 'react-helmet';
 import Img from 'gatsby-image/withIEPolyfill';
 
 import Layout from '../components/Layout';
+import YusungTelecom from '../assets/images/YusungTelecom.gif';
 
 export default class Home extends React.PureComponent {
   render() {
@@ -18,8 +19,25 @@ export default class Home extends React.PureComponent {
           <title>{siteTitle}</title>
           <meta name="description" content={siteDescription} />
         </Hemlet>
-        <p>YUSUNG CASTLE</p>
-        <Img fluid={imageFluid} title="유성의 봄" alt="유성의 봄" />
+        <Img fluid={imageFluid} title="유성의 봄" alt="The spring of Yusung" />
+        <h2>YUSUNG CASTLE ™</h2>
+        <p>
+          Yusung Castle is an organization in Korea.<br />
+          Since our found in 2018, we grow up over 5 members.<br />
+          Collaboration, hard work, and creativity is what drives our organization to glory.<br />
+        </p>
+        <h2>Sponsors</h2>
+        <a href="http://www.yusung82.co.kr" target="_blank" rel="noopener noreferrer">
+          <img src={YusungTelecom} alt="Yusung Telecom" />
+        </a>
+
+        <h2>Maps</h2>
+        <iframe
+          title="Yusung Castle Maps"
+          src="https://www.google.com/maps/d/embed?mid=1VXvPxilzJq9XyV27iVisbI4srptG12_8"
+          width="100%"
+          height="500">
+        </iframe>
       </Layout>
     );
   }

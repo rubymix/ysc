@@ -13,7 +13,7 @@ import { rhythm } from '../utils/typography';
 import './../styles/timeline.css';
 import LightboxImage from '../components/LightboxImage';
 import jsonData from './../data/timeline';
-import { ENGINE_METHOD_DIGESTS } from 'constants';
+
 
 export default class Timeline extends React.PureComponent {
   render() {
