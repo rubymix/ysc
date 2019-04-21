@@ -1,19 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link, graphql } from 'gatsby';
-import get from 'lodash/get';
 import Helmet from 'react-helmet';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 
 import Layout from '../../components/Layout';
 import portfolioData from './../../data/portfolio';
 
-export default class portfolioIndex extends React.Component {
+export default class portfolioIndex extends React.PureComponent {
   render() {
-    const siteTitle = get(this, 'props.data.site.siteMetadata.title');
-    const siteDescription = get(
-      this,
-      'props.data.site.siteMetadata.description'
-    );
+    const siteTitle = this.props.data.site.siteMetadata.title;
+    const siteDescription = this.props.data.site.siteMetadata.description;
 
     return (
       <Layout>
@@ -63,6 +60,9 @@ export default class portfolioIndex extends React.Component {
     );
   }
 }
+portfolioIndex.propTypes = {
+  data: PropTypes.object.isRequired
+};
 
 export const query = graphql `
   query {

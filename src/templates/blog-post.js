@@ -1,16 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { Link, graphql } from 'gatsby';
-import get from 'lodash/get';
 
 import Bio from '../components/Bio';
 import Layout from '../components/Layout';
 import { rhythm, scale } from '../utils/typography';
 
-export default class BlogPostTemplate extends React.Component {
+export default class BlogPostTemplate extends React.PureComponent {
   render() {
     const post = this.props.data.markdownRemark;
-    const siteTitle = get(this.props, 'data.site.siteMetadata.title');
+    const siteTitle = this.props.data.site.siteMetadata.title;
     const siteDescription = post.excerpt;
     const { previous, next } = this.props.pageContext;
 
@@ -69,8 +69,18 @@ export default class BlogPostTemplate extends React.Component {
     );
   }
 }
+BlogPostTemplate.propTypes = {
+  data: PropTypes.shape({
+    site: PropTypes.shape({
+      siteMetadata: PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        author: PropTypes.string.isRequired,
+      }).isRequired,
+    }).isRequired,
+  }).isRequired,
+};
 
-export const query = graphql `
+export const query = graphql`
   query BlogPostBySlug($slug: String!) {
     site {
       siteMetadata {

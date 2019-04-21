@@ -1,17 +1,14 @@
 import React from 'react';
-import Helmet from 'react-helmet';
+import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
-import get from 'lodash/get';
+import Helmet from 'react-helmet';
 
 import Layout from '../components/Layout';
 
-export default class Contact extends React.Component {
+export default class Contact extends React.PureComponent {
   render() {
-    const siteTitle = get(this, 'props.data.site.siteMetadata.title');
-    const siteDescription = get(
-      this,
-      'props.data.site.siteMetadata.description'
-    );
+    const siteTitle = this.props.data.site.siteMetadata.title;
+    const siteDescription = this.props.data.site.siteMetadata.description;
 
     return (
       <Layout>
@@ -31,6 +28,9 @@ export default class Contact extends React.Component {
     );
   }
 }
+Contact.propTypes = {
+  data: PropTypes.object.isRequired
+};
 
 export const query = graphql`
   query {

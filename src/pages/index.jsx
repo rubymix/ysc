@@ -1,18 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
-import get from 'lodash/get';
 import Hemlet from 'react-helmet';
+import Img from 'gatsby-image/withIEPolyfill';
 
 import Layout from '../components/Layout';
-import DisplayImage from './../assets/images/JP410417_121158.jpg';
 
-export default class SiteIndex extends React.Component {
+export default class Home extends React.PureComponent {
   render() {
-    const siteTitle = get(this, 'props.data.site.siteMetadata.title');
-    const siteDescription = get(
-      this,
-      'props.data.site.siteMetadata.description'
-    );
+    const siteTitle = this.props.data.site.siteMetadata.title;
+    const siteDescription = this.props.data.site.siteMetadata.description;
+    const imageFluid = this.props.data.image.childImageSharp.fluid;
 
     return (
       <Layout>
@@ -20,14 +18,15 @@ export default class SiteIndex extends React.Component {
           <title>{siteTitle}</title>
           <meta name="description" content={siteDescription} />
         </Hemlet>
-        <p>
-          YUSUNG CASTLE
-        </p>
-        <img src={DisplayImage} alt={siteTitle} />
+        <p>YUSUNG CASTLE</p>
+        <Img fluid={imageFluid} title="유성의 봄" alt="유성의 봄" />
       </Layout>
     );
   }
 }
+Home.propTypes = {
+  data: PropTypes.object.isRequired
+};
 
 export const query = graphql`
   query {
@@ -35,6 +34,13 @@ export const query = graphql`
       siteMetadata {
         title
         description
+      }
+    },
+    image: file(relativePath: {eq: "JP410417_121158.jpg"}) {
+      childImageSharp {
+        fluid(maxWidth: 800) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
       }
     }
   }

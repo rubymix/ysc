@@ -54,8 +54,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'gatsby-minimal-portfolio-blog',
-        short_name: 'gmpb',
+        name: 'Yusung Castle',
+        short_name: 'ysc',
         start_url: '/',
         background_color: '#ffffff',
         theme_color: '#663399',

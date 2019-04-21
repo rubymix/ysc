@@ -1,5 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Modal from 'react-responsive-modal';
+import Img from 'gatsby-image/withIEPolyfill';
+
 
 export default class LightboxImage extends React.PureComponent {
   constructor(props) {
@@ -19,33 +22,31 @@ export default class LightboxImage extends React.PureComponent {
   }
 
   render() {
-    const { title, caption, src } = this.props;
+    const { fluid, title, description } = this.props;
     return (
       <div>
         <Modal
           open={this.state.open}
           onClose={this.closeModal}
-          center
-          styles={{
-            modal: {
-              padding: 0,
-            },
-          }}
-          showCloseIcon={true}
+          // center
+          styles={{ modal: { padding: 0 } }}
         >
-          <img src={src} alt={title} />
+          <Img fluid={fluid} style={{width: 800}} />
           <div style={{ padding: 10 }}>
             <span style={{ fontSize: 18, fontWeight: 'bold' }}>{title}</span>
             <br />
-            {caption}
+            <p style={{whiteSpace: 'pre-wrap'}}>{description}</p>
           </div>
         </Modal>
-        <img
-          src={src}
-          alt={title}
-          onClick={this.openModal}
-        />
+        <div onClick={this.openModal}>
+          <Img fluid={fluid} title={title} />
+        </div>
       </div>
     );
   }
 }
+LightboxImage.propTypes = {
+  fluid: PropTypes.object.isRequired,
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string
+};

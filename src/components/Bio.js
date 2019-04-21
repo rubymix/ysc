@@ -8,7 +8,7 @@ import profilePic from './../assets/images/avatar.png';
 import { rhythm } from '../utils/typography';
 import bioData from './../data/bio';
 
-export default class Bio extends React.Component {
+export default class Bio extends React.PureComponent {
   render() {
     return (
       <div

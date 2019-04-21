@@ -1,19 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link, graphql } from 'gatsby';
-import get from 'lodash/get';
 import Helmet from 'react-helmet';
 
 import Layout from '../../components/Layout';
 import { rhythm } from '../../utils/typography';
 
-export default class BlogIndex extends React.Component {
+export default class BlogIndex extends React.PureComponent {
   render() {
-    const siteTitle = get(this, 'props.data.site.siteMetadata.title');
-    const siteDescription = get(
-      this,
-      'props.data.site.siteMetadata.description'
-    );
-    const posts = get(this, 'props.data.allMarkdownRemark.edges');
+    const siteTitle = this.props.data.site.siteMetadata.title;
+    const siteDescription = this.props.data.site.siteMetadata.description;
+    const posts = this.props.data.allMarkdownRemark.edges;
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -24,7 +21,7 @@ export default class BlogIndex extends React.Component {
         />
         <h2>Blog</h2>
         {posts.map(({ node }) => {
-          const title = get(node, 'frontmatter.title') || node.frontmatter.path;
+          const title = node.frontmatter.title || node.frontmatter.path;
           return (
             <div key={node.frontmatter.path}>
               <h3
@@ -45,6 +42,9 @@ export default class BlogIndex extends React.Component {
     );
   }
 }
+BlogIndex.propTypes = {
+  data: PropTypes.object.isRequired
+};
 
 export const query = graphql `
   query {

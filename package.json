@@ -1,11 +1,13 @@
 {
   "name": "ysc",
-  "description": "Yusung Castle website by GatsbyJS",
-  "version": "0.1.0",
-  "author": "Junghyun Kim",
-  "bugs": {
-    "url": "https://github.com/rubymix/ysc/issues"
-  },
+  "description": "Yusung Castle powered by Gatsby",
+  "version": "0.1.1",
+  "author": "Junghyun Kim <zerocool@sulhee.com>",
+  "homepage": "https://ysc.sulhee.com",
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
   "dependencies": {
     "gatsby": "^2.3.25",
     "gatsby-image": "^2.0.39",
@@ -25,7 +27,6 @@
     "gatsby-source-filesystem": "^2.0.29",
     "gatsby-transformer-remark": "^2.3.8",
     "gatsby-transformer-sharp": "^2.1.18",
-    "lodash": "^4.17.11",
     "prismjs": "^1.16.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -41,19 +42,18 @@
     "typography-theme-github": "^0.16.19",
     "typography-theme-wordpress-2016": "^0.16.19"
   },
-  "homepage": "https://ysc.sulhee.com",
-  "keywords": [],
-  "license": "MIT",
-  "main": "n/a",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rubymix/ysc.git"
+  "devDependencies": {
+    "babel-eslint": "^10.0.1"
   },
   "scripts": {
     "start": "gatsby develop",
     "build": "gatsby build"
   },
-  "devDependencies": {
-    "babel-eslint": "^10.0.1"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rubymix/ysc.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rubymix/ysc/issues"
   }
 }

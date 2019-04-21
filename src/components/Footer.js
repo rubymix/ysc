@@ -18,7 +18,11 @@ export default class Footer extends React.PureComponent {
     return (
       <div style={styles.rootContainer}>
         Built with&nbsp;
-        <a href="https://gatsbyjs.org" target="_blank">
+        <a
+          href="https://gatsbyjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           GatsbyJS
         </a>
       </div>

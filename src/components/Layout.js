@@ -5,7 +5,7 @@ import Header from '../components/Header';
 import Navbar from './Navbar';
 import Footer from './Footer';
 
-export default class Layout extends React.Component {
+export default class Layout extends React.PureComponent {
   render() {
     const { children } = this.props;
     const importedStyle = this.props.style;
