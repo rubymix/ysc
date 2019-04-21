@@ -7,6 +7,7 @@ import {
   VerticalTimelineElement,
 } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
+import Chart from 'react-google-charts';
 
 import Layout from '../components/Layout';
 import { rhythm } from '../utils/typography';
@@ -14,6 +15,85 @@ import './../styles/timeline.css';
 import LightboxImage from '../components/LightboxImage';
 import jsonData from './../data/timeline';
 
+
+
+class Statistics extends React.PureComponent {
+  constructor(props) {
+    super(props);
+
+    this.data1 = [
+      ['Weekday', 'Number',],
+      ['Monday', 0],
+      ['Tuesday', 0],
+      ['Wednesday', 0],
+      ['Thursday', 0],
+      ['Friday', 0],
+      ['Saturday', 0],
+      ['Sunday', 0],
+    ];
+
+    for (let i = 0; i < jsonData.length; ++i) {
+      let date = new Date(jsonData[i].date);
+      // getDay 함수는 일요일 부터 시작
+      let day = (date.getDay() + 6) % 7;
+      this.data1[day + 1][1] += 1;
+    }
+
+    this.data2 = [
+      ['Place', 'Number'],
+    ];
+    let places = {};
+    for (let i = 0; i < jsonData.length; ++i) {
+      for (let j = 0; j < jsonData[i].places.length; ++j) {
+        const place = jsonData[i].places[j];
+        if (places[place]) {
+          places[place] += 1;
+        } else {
+          places[place] = 1;
+        }
+      }
+    }
+    let etc = 0;
+    for (const [key, value] of Object.entries(places)) {
+      if (value > 1) {
+        this.data2.push([key, value]);
+      } else {
+        etc += value;
+      }
+    }
+    if (etc > 0) {
+      this.data2.push(['기타', etc]);
+    }
+  }
+
+  render() {
+    return (
+      <div style={{ display: 'flex', maxWidth: 900 }}>
+        <Chart
+          width={'450px'}
+          height={'300px'}
+          chartType="Bar"
+          loader={<div>Loading Chart</div>}
+          data={this.data1}
+          options={{
+            legend: { position: 'none' }
+          }}
+        />
+
+        <Chart
+          width={'450px'}
+          height={'300px'}
+          chartType="PieChart"
+          loader={<div>Loading Chart</div>}
+          data={this.data2}
+          options={{
+            is3D: true,
+          }}
+        />
+      </div>
+    );
+  }
+}
 
 export default class Timeline extends React.PureComponent {
   render() {
@@ -28,10 +108,12 @@ export default class Timeline extends React.PureComponent {
           title={`Timeline | ${siteTitle}`}
         />
 
-        <h2>Timeline</h2>
+        <h2>Statistics</h2>
+        <Statistics />
 
+        <h2>Timeline</h2>
         <div>
-          <VerticalTimeline animate={false}>
+          <VerticalTimeline>
             {jsonData.map((item, index) => {
               let image = null;
               for (let i = 0; i < this.props.data.images.edges.length; ++i) {

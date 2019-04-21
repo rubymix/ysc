@@ -31,6 +31,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-flexbox-grid": "^2.1.2",
+    "react-google-charts": "^3.0.11",
     "react-helmet": "^5.2.0",
     "react-icons": "^3.6.1",
     "react-responsive-modal": "^3.6.0",
