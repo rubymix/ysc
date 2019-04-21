@@ -8,33 +8,25 @@ const data = [
   {
     name: 'Junghyun Kim',
     website: 'https://example.com',
-    description: ` Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-    eiusmod tempor incididunt ut labore et dolore magna aliqua. At augue
-    eget arcu dictum varius duis.`,
+    description: 'Junghyun Kim',
     portrait: ImageJunghyun,
   },
   {
     name: 'Chansu Kim',
     website: 'https://example.com',
-    description: ` Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-    eiusmod tempor incididunt ut labore et dolore magna aliqua. At augue
-    eget arcu dictum varius duis.`,
+    description: '',
     portrait: ImageChansu,
   },
   {
     name: 'Jungjin Kim',
     website: 'https://example.com',
-    description: ` Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-    eiusmod tempor incididunt ut labore et dolore magna aliqua. At augue
-    eget arcu dictum varius duis.`,
+    description: '',
     portrait: ImageJungjin,
   },
   {
     name: 'Jinyung Ahn',
     website: 'https://example.com',
-    description: ` Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-    eiusmod tempor incididunt ut labore et dolore magna aliqua. At augue
-    eget arcu dictum varius duis.`,
+    description: '',
     portrait: ImageJinyoung,
   },
 ];

@@ -3,9 +3,10 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { Link, graphql } from 'gatsby';
 
-import Bio from '../components/Bio';
 import Layout from '../components/Layout';
+import Author from '../components/Author';
 import { rhythm, scale } from '../utils/typography';
+
 
 export default class BlogPostTemplate extends React.PureComponent {
   render() {
@@ -40,7 +41,7 @@ export default class BlogPostTemplate extends React.PureComponent {
             marginBottom: rhythm(1),
           }}
         />
-        <Bio />
+        <Author author={post.frontmatter.author}/>
         <ul
           style={{
             display: 'flex',
@@ -88,6 +89,7 @@ export const query = graphql `
       frontmatter {
         title
         date(formatString: "YYYY-MM-DD")
+        author
         path
       }
       fields {

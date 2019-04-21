@@ -27,7 +27,7 @@ export default class Leadership extends React.PureComponent {
             <h3>Board</h3>
           </Row>
           <Row>
-            {jsonData.map((item, index) =>
+            {jsonData.filter(item => true).map((item, index) =>
               <Col key={index} xs>
                 <img src={item.portrait} alt={item.name} style={{width: 250, margin: 10}} />
               </Col>

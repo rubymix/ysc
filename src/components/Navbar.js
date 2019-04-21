@@ -26,7 +26,7 @@ export default class Navbar extends React.PureComponent {
           <Link to={'/'}>Home</Link>
           <Link to={'/leadership'}>Leadership</Link>
           <Link to={'/timeline'}>Timeline</Link>
-          {/* <Link to={'/articles'}>Articles</Link> */}
+          <Link to={'/articles'}>Articles</Link>
         </div>
       </div>
     );
