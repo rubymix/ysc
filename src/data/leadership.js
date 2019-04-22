@@ -7,24 +7,28 @@ const data = [
   // placeholder
   {
     name: 'Junghyun Kim',
+    grade: 'board',
     website: 'https://example.com',
     description: 'Junghyun Kim',
     portrait: ImageJunghyun,
   },
   {
     name: 'Chansu Kim',
+    grade: 'board',
     website: 'https://example.com',
     description: '',
     portrait: ImageChansu,
   },
   {
     name: 'Jungjin Kim',
+    grade: 'board',
     website: 'https://example.com',
     description: '',
     portrait: ImageJungjin,
   },
   {
     name: 'Jinyung Ahn',
+    grade: 'board',
     website: 'https://example.com',
     description: '',
     portrait: ImageJinyoung,

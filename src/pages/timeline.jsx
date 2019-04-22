@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
+import { Grid, Row, Col } from 'react-flexbox-grid';
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -11,10 +12,9 @@ import Chart from 'react-google-charts';
 
 import Layout from '../components/Layout';
 import { rhythm } from '../utils/typography';
-import './../styles/timeline.css';
 import LightboxImage from '../components/LightboxImage';
+import './../styles/timeline.css';
 import jsonData from './../data/timeline';
-
 
 
 class Statistics extends React.PureComponent {
@@ -68,29 +68,34 @@ class Statistics extends React.PureComponent {
 
   render() {
     return (
-      <div style={{ display: 'flex', maxWidth: 900 }}>
-        <Chart
-          width={'450px'}
-          height={'300px'}
-          chartType="Bar"
-          loader={<div>Loading Chart</div>}
-          data={this.data1}
-          options={{
-            legend: { position: 'none' }
-          }}
-        />
-
-        <Chart
-          width={'450px'}
-          height={'300px'}
-          chartType="PieChart"
-          loader={<div>Loading Chart</div>}
-          data={this.data2}
-          options={{
-            is3D: true,
-          }}
-        />
-      </div>
+      <Grid>
+        <Row>
+          <Col xs>
+            <Chart
+              width={'100%'}
+              height={'250px'}
+              chartType="Bar"
+              loader={<div>Loading Chart</div>}
+              data={this.data1}
+              options={{
+                legend: { position: 'none' }
+              }}
+            />
+          </Col>
+          <Col xs>
+            <Chart
+              width={'100%'}
+              height={'250px'}
+              chartType="PieChart"
+              loader={<div>Loading Chart</div>}
+              data={this.data2}
+              options={{
+                is3D: true,
+              }}
+            />
+          </Col>
+        </Row>
+      </Grid>
     );
   }
 }
@@ -112,55 +117,53 @@ export default class Timeline extends React.PureComponent {
         <Statistics />
 
         <h2>Timeline</h2>
-        <div>
-          <VerticalTimeline>
-            {jsonData.map((item, index) => {
-              let image = null;
-              for (let i = 0; i < this.props.data.images.edges.length; ++i) {
-                if (item.imagefile === this.props.data.images.edges[i].node.relativePath) {
-                  image = this.props.data.images.edges[i].node.childImageSharp;
-                  break;
-                }
+        <VerticalTimeline>
+          {jsonData.map((item, index) => {
+            let image = null;
+            for (let i = 0; i < this.props.data.images.edges.length; ++i) {
+              if (item.imagefile === this.props.data.images.edges[i].node.relativePath) {
+                image = this.props.data.images.edges[i].node.childImageSharp;
+                break;
               }
+            }
 
-              return (
-                <VerticalTimelineElement
-                  key={index}
-                  className="vertical-timeline-element--work"
-                  date={item.date}
-                  iconStyle={{ background: '#fff', color: '#34495e' }}
-                  icon={item.icon}
-                >
-                  <h3 className="vertical-timeline-element-title">
-                    {item.title}
-                  </h3>
-                  <br />
-                  {image && (
-                    <LightboxImage
-                      fluid={image.fluid}
-                      title={item.title}
-                      description={item.description}
-                    />
-                  )}
-                  {item.places.map(place => (
-                    <label key={place} className="vertical-timeline-element-place">
-                      {place}
-                    </label>
-                  ))}
-                  {item.attendances.map(attendance => (
-                    <label key={attendance} className="vertical-timeline-element-attendance">
-                      {attendance}
-                    </label>
-                  ))}
-                  <br />
-                  <div className="vertical-timeline-element-description">
-                    {item.description}
-                  </div>
-                </VerticalTimelineElement>
-              );
-            })}
-          </VerticalTimeline>
-        </div>
+            return (
+              <VerticalTimelineElement
+                key={index}
+                className="vertical-timeline-element--work"
+                date={item.date}
+                iconStyle={{ background: '#fff', color: '#34495e' }}
+                icon={item.icon}
+              >
+                <h3 className="vertical-timeline-element-title">
+                  {item.title}
+                </h3>
+                <br />
+                {image && (
+                  <LightboxImage
+                    fluid={image.fluid}
+                    title={item.title}
+                    description={item.description}
+                  />
+                )}
+                {item.places.map(place => (
+                  <label key={place} className="vertical-timeline-element-place">
+                    {place}
+                  </label>
+                ))}
+                {item.attendances.map(attendance => (
+                  <label key={attendance} className="vertical-timeline-element-attendance">
+                    {attendance}
+                  </label>
+                ))}
+                <br />
+                <div className="vertical-timeline-element-description">
+                  {item.description}
+                </div>
+              </VerticalTimelineElement>
+            );
+          })}
+        </VerticalTimeline>
       </Layout>
     );
   }

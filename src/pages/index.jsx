@@ -6,6 +6,7 @@ import Img from 'gatsby-image/withIEPolyfill';
 
 import Layout from '../components/Layout';
 import YusungTelecom from '../assets/images/YusungTelecom.gif';
+import UpcomingEvents from '../assets/images/upcoming-events.gif';
 
 export default class Home extends React.PureComponent {
   render() {
@@ -26,6 +27,13 @@ export default class Home extends React.PureComponent {
           Since our found in 2018, we grow up over 5 members.<br />
           Collaboration, hard work, and creativity is what drives our organization to glory.<br />
         </p>
+
+        <br />
+        <div>
+          <img src={UpcomingEvents} alt="Upcoming Events" style={{ maxWidth: 300, marginRight: 20 }} />
+          <strong style={{ verticalAlign: 'top' }}>2019년 5월 16일 정기 모임</strong>
+        </div>
+
         <h2>Sponsors</h2>
         <a href="http://www.yusung82.co.kr" target="_blank" rel="noopener noreferrer">
           <img src={YusungTelecom} alt="Yusung Telecom" />
