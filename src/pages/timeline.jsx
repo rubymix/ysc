@@ -113,8 +113,8 @@ export default class Timeline extends React.PureComponent {
           title={`Timeline | ${siteTitle}`}
         />
 
-        <h2>Statistics</h2>
-        <Statistics />
+        {/* <h2>Statistics</h2>
+        <Statistics /> */}
 
         <h2>Timeline</h2>
         <VerticalTimeline>

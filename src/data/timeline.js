@@ -4,6 +4,15 @@ import { FaRegCalendarCheck, FaRegCalendarAlt } from 'react-icons/fa';
 const data = [
   // placeholder
   {
+    date: '2019-04-22',
+    title: '23차 모임',
+    places: ['양지일품양꼬치'],
+    attendances: ['김정진', '김정현', '김찬수', '안진영'],
+    description: '126000원',
+    imagefile: 'JP410422_191312.jpg',
+    icon: <FaRegCalendarAlt />,
+  },
+  {
     date: '2019-04-11',
     title: '22차 모임 (정기 모임)',
     places: ['전원일기', '양지상회'],
@@ -168,7 +177,7 @@ const data = [
   {
     date: '2019-12-24',
     title: '1차 모임',
-    places: ['배꼽시계', '양꼬치'],
+    places: ['배꼽시계', '양지일품양꼬치'],
     attendances: ['김정진', '김정현', '김찬수'],
     icon: <FaRegCalendarAlt />,
   },
