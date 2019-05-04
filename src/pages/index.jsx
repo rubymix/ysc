@@ -31,7 +31,7 @@ export default class Home extends React.PureComponent {
         <br />
         <div>
           <img src={UpcomingEvents} alt="Upcoming Events" style={{ maxWidth: 300, marginRight: 20 }} />
-          <strong style={{ verticalAlign: 'top' }}>2019년 5월 16일 정기 모임</strong>
+          <strong style={{ verticalAlign: 'top' }}>TBA</strong>
         </div>
 
         <h2>Sponsors</h2>
