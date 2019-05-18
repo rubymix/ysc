@@ -4,6 +4,13 @@ import { FaRegCalendarCheck, FaRegCalendarAlt } from 'react-icons/fa';
 const data = [
   // placeholder
   {
+    date: '2019-05-15',
+    title: '26차 모임',
+    places: ['갈매기'],
+    attendances: ['김정진', '김찬수', '안진영', '원동우', '정은영', '정찬수'],
+    icon: <FaRegCalendarAlt />,
+  },
+  {
     date: '2019-05-01',
     title: '25차 모임',
     places: ['여주 프리미엄 아울렛'],
