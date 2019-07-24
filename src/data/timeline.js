@@ -4,6 +4,29 @@ import { FaRegCalendarCheck, FaRegCalendarAlt } from 'react-icons/fa';
 const data = [
   // placeholder
   {
+    date: '2019-07-15',
+    title: '30차 모임',
+    places: ['양지돼지집'],
+    attendances: ['김정진', '김찬수', '안진영', '정서현', '정은영'],
+    description: '중복',
+    icon: <FaRegCalendarAlt />,
+  },
+  {
+    date: '2019-06-26',
+    title: '29차 모임',
+    places: ['배꼽시계'],
+    attendances: ['김정진', '김정현', '김찬수', '안진영', '정은영'],
+    icon: <FaRegCalendarAlt />,
+  },
+  {
+    date: '2019-06-22',
+    title: '28차 모임',
+    places: ['도깨비족발'],
+    attendances: ['김정진', '김정현', '김찬수', '안진영'],
+    description: '생일',
+    icon: <FaRegCalendarAlt />,
+  },
+  {
     date: '2019-06-05',
     title: '27차 모임',
     places: ['친구네'],
