@@ -33,6 +33,16 @@ export default class Leadership extends React.PureComponent {
               </Col>
             )}
           </Row>
+          <Row>
+            <h3>Member</h3>
+          </Row>
+          <Row>
+            {jsonData.filter(item => item.grade === 'member').map((item, index) =>
+              <Col key={index} xs>
+                <img src={item.portrait} alt={item.name} style={{ width: 200, margin: 10 }} />
+              </Col>
+            )}
+          </Row>
         </Grid>
       </Layout>
     );
