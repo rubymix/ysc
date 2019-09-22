@@ -8,7 +8,7 @@ const data = [
   {
     name: 'Junghyun Kim',
     grade: 'board',
-    website: 'https://example.com',
+    website: 'https://www.sulhee.com',
     description: 'Junghyun Kim',
     portrait: ImageJunghyun,
   },

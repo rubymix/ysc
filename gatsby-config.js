@@ -4,7 +4,7 @@ module.exports = {
     title: 'Yusung Castle',
     description: 'Higher society',
     author: 'Junghyun Kim',
-    siteUrl: 'https://ysc.sulhee.com',
+    siteUrl: 'https://ysc.bigdippergames.com',
   },
   pathPrefix: '/',
   plugins: [{
