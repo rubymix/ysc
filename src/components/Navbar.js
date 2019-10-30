@@ -3,32 +3,30 @@ import { Link } from 'gatsby';
 
 import { rhythm } from './../utils/typography';
 
-export default class Navbar extends React.PureComponent {
-  render() {
-    return (
+export default function Navbar() {
+  return (
+    <div
+      style={{
+        width: '100%',
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'center',
+      }}
+    >
       <div
         style={{
-          width: '100%',
+          width: rhythm(24),
+          maxWidth: 400,
           display: 'flex',
           flexDirection: 'row',
-          justifyContent: 'center',
+          justifyContent: 'space-between',
         }}
       >
-        <div
-          style={{
-            width: rhythm(24),
-            maxWidth: 400,
-            display: 'flex',
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-          }}
-        >
-          <Link to={'/'}>Home</Link>
-          <Link to={'/leadership'}>Leadership</Link>
-          <Link to={'/timeline'}>Timeline</Link>
-          <Link to={'/articles'}>Articles</Link>
-        </div>
+        <Link to={'/'}>Home</Link>
+        <Link to={'/leadership'}>Member</Link>
+        <Link to={'/timeline'}>Timeline</Link>
+        <Link to={'/articles'}>Articles</Link>
       </div>
-    );
-  }
+    </div>
+  );
 }

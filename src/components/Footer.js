@@ -13,19 +13,10 @@ const styles = {
   },
 };
 
-export default class Footer extends React.PureComponent {
-  render() {
-    return (
-      <div style={styles.rootContainer}>
-        Built with&nbsp;
-        <a
-          href="https://gatsbyjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          GatsbyJS
-        </a>
-      </div>
-    );
-  }
+export default function Footer() {
+  return (
+    <div style={styles.rootContainer}>
+      Built with <a href="https://gatsbyjs.org" target="_blank" rel="noopener noreferrer" > GatsbyJS</a>
+    </div>
+  );
 }
