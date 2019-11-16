@@ -13,7 +13,7 @@ import Chart from 'react-google-charts';
 import Layout from '../components/Layout';
 import { rhythm } from '../utils/typography';
 import LightboxImage from '../components/LightboxImage';
-import './../styles/timeline.css';
+import '../styles/timeline.css';
 import jsonData from './../data/timeline';
 
 

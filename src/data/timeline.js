@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaRegCalendarCheck, FaRegCalendarAlt } from 'react-icons/fa';
+import { FaRegCalendarCheck, FaRegCalendarAlt, FaCar } from 'react-icons/fa';
 
 const data = [
   // placeholder
@@ -9,7 +9,7 @@ const data = [
     places: ['CGV 용인', '시오', '이마트'],
     attendances: ['김정현', '김찬수', '안진영'],
     imagefile: 'JP411103_090615.jpg',
-    icon: <FaRegCalendarAlt />,
+    icon: <FaCar color="purple" />,
   },
   {
     date: '2019-10-12',
@@ -17,7 +17,7 @@ const data = [
     places: ['여주프리미엄아울렛'],
     attendances: ['김정현', '김찬수', '안진영'],
     imagefile: 'JP411012_134631.jpg',
-    icon: <FaRegCalendarAlt />,
+    icon: <FaCar color="purple" />,
   },
   {
     date: '2019-07-15',
