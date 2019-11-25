@@ -4,6 +4,14 @@ import { FaRegCalendarCheck, FaRegCalendarAlt, FaCar } from 'react-icons/fa';
 const data = [
   // placeholder
   {
+    date: '2019-11-23',
+    title: '35차 모임 (유닛)',
+    places: ['모나미 본사', '코이라멘'],
+    attendances: ['김정현', '김찬수', '안진영'],
+    imagefile: 'JP411123_121426.jpg',
+    icon: <FaCar color="purple" />,
+  },
+  {
     date: '2019-11-22',
     title: '34차 모임',
     places: ['신통치킨'],
